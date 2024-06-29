@@ -10,14 +10,14 @@ app.get('/users',function(req,res){
     res.json(user)
 })
 async function mongoConnect() {
-    let client = new MongoClient('mongodb+srv://anshif:nesRoWgW5SqAD0yF@cluster0.8dtglzr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+    let client = new MongoClient('mongodb+srv://amithcse21:amith2966@cluster.x2iecq7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster');
     await client.connect();
     db = client.db('jyothi');
    ;
  }
  
 app.get('/users', async function (req, res) {
-    let output = await db.collection('user').find({}).toArray();
+    let output = await db.collection('users').find({}).toArray();
     res.json(output);
 });
 
