@@ -10,7 +10,7 @@ app.get('/users',function(req,res){
     res.json(user)
 })
 async function mongoConnect() {
-    let client = new MongoClient('mongodb+srv://amithcse21:amith2966@cluster.x2iecq7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster');
+    let client = new MongoClient('mongodb+srv://govk11:Govk1000!@cluster0.ophsocs.mongodb.net/e-commerce');
     await client.connect();
     db = client.db('jyothi');
    ;
