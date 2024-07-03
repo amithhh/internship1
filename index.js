@@ -1,6 +1,7 @@
-const express=require('express');
+const express = require("express");
 const app=express();
 const cors=require('cors');
+const mongoose = require("mongoose");
 const { MongoClient } = require('mongodb');
 app.use(cors())
 app.use(express.json())
@@ -10,9 +11,9 @@ app.get('/users',function(req,res){
     res.json(user)
 })
 async function mongoConnect() {
-    let client = mongoose.connect("mongodb+srv://amithcse21:amith2966@cluster.x2iecq7.mongodb.net/ecommerce").then(()=>console.log("DB connected"));
+    let client = mongoose.connect("mongodb+srv://amithcse21:amith2966@cluster.x2iecq7.mongodb.net/jyooo").then(()=>console.log("DB connected"));
     await client.connect();
-    db = client.db('jyothi');
+    db = client.db('jyooo');
    ;
  }
  
