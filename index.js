@@ -1,17 +1,17 @@
-const express = require("express");
+import express, { json } from "express";
 const app=express();
-const cors=require('cors');
-const mongoose = require("mongoose");
-const { MongoClient } = require('mongodb');
+import cors from 'cors';
+import { connect } from "mongoose";
+import { MongoClient } from 'mongodb';
 app.use(cors())
-app.use(express.json())
+app.use(json())
 
 let user=[]
 app.get('/users',function(req,res){
     res.json(user)
 })
 async function mongoConnect() {
-    let client = mongoose.connect("mongodb+srv://amithcse21:amith2966@cluster.x2iecq7.mongodb.net/jyooo").then(()=>console.log("DB connected"));
+    let client = connect("mongodb+srv://amithcse21:amith2966@cluster.x2iecq7.mongodb.net/jyooo").then(()=>console.log("DB connected"));
     await client.connect();
     db = client.db('jyooo');
    ;
